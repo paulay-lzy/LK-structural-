@@ -1,6 +1,9 @@
 import numpy as np
+
 import cv2 
+
 cap = cv2.VideoCapture("C:\\Users\\26949\\Desktop\\test6.mp4") 
+
 feature_params = dict(maxCorners=100,
                       qualityLevel=0.3,
                       minDistance=100,
@@ -10,9 +13,12 @@ lk_params = dict(winSize=(15, 15),
                  maxLevel=2,
                  criteria=(cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 10, 0.03))
 
+
 color = np.random.randint(0, 255, (100, 3))
  
+ 
 ret, old_frame = cap.read()
+
 old_gray = cv2.cvtColor(old_frame, cv2.COLOR_BGR2GRAY)
 
 p0 = cv2.goodFeaturesToTrack(old_gray, mask=None, **feature_params)
