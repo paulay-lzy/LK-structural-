@@ -1,9 +1,6 @@
 import numpy as np
-import cv2
- 
+import cv2 
 cap = cv2.VideoCapture("C:\\Users\\26949\\Desktop\\test6.mp4") 
- 
-
 feature_params = dict(maxCorners=100,
                       qualityLevel=0.3,
                       minDistance=100,
